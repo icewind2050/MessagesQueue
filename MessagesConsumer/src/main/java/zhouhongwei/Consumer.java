@@ -9,6 +9,8 @@ import java.util.TimerTask;
 public class Consumer implements Runnable{
     private static Connection connection;
     private final MessageConsumer messageConsumer;
+    private final MessageProducer messageProducer;
+    private final Session session;
     GaussCalculator gaussCalculator;
     public Consumer(String userName, String password, String URL,int countOfNumber) {
         try {
@@ -16,9 +18,11 @@ public class Consumer implements Runnable{
             ConnectionFactory connectionFactory = new ActiveMQConnectionFactory(userName, password, URL);
             connection = connectionFactory.createConnection();
             connection.start();
-            Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
-            Destination destination = session.createQueue("queue_gauss");
-            messageConsumer = session.createConsumer(destination);
+            session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
+            Destination destinationReceive = session.createQueue("queue_gauss");
+            Destination destinationSent = session.createQueue("queue_drawer");
+            messageConsumer = session.createConsumer(destinationReceive);
+            messageProducer = session.createProducer(destinationSent);
         } catch (JMSException e) {
             throw new RuntimeException(e);
         }
@@ -42,6 +46,17 @@ public class Consumer implements Runnable{
             public void run() {
                 System.out.println(gaussCalculator.mean());
                 System.out.println(gaussCalculator.variance());
+                Message message;
+                try {
+                    message = session.createObjectMessage(new drawerData(gaussCalculator.mean(), gaussCalculator.variance(), gaussCalculator.getMaximum(), gaussCalculator.getMinimum()));
+                } catch (JMSException e) {
+                    throw new RuntimeException(e);
+                }
+                try {
+                    messageProducer.send(message);
+                } catch (JMSException e) {
+                    throw new RuntimeException(e);
+                }
             }
         };
         Timer timer = new Timer();
