@@ -4,13 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eadfa530-eb92-4568-bb0e-bd3f3e0c8bf2" name="Changes" comment="确实能跑修正了一下没用过的东西">
+    <list default="true" id="eadfa530-eb92-4568-bb0e-bd3f3e0c8bf2" name="Changes" comment="确实能跑修正了一下没用过的东西,改了一下">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MessagesConsumer/src/main/java/zhouhongwei/Consumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/MessagesConsumer/src/main/java/zhouhongwei/Calculator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MessagesConsumer/src/main/java/zhouhongwei/Draw.java" beforeDir="false" afterPath="$PROJECT_DIR$/MessagesConsumer/src/main/java/zhouhongwei/Draw.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MessagesConsumer/src/main/java/zhouhongwei/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MessagesProducer/src/main/java/zhouhongwei/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MessagesProducer/src/main/java/zhouhongwei/Producer.java" beforeDir="false" afterPath="$PROJECT_DIR$/MessagesProducer/src/main/java/zhouhongwei/Producer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -229,7 +225,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681800078791</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="确实能跑修正了一下没用过的东西,改了一下">
+      <created>1681801129669</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1681801129669</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -266,7 +269,8 @@
     <MESSAGE value="能跑有图,后面加个其他标签就行" />
     <MESSAGE value="确实能跑" />
     <MESSAGE value="确实能跑修正了一下没用过的东西" />
-    <option name="LAST_COMMIT_MESSAGE" value="确实能跑修正了一下没用过的东西" />
+    <MESSAGE value="确实能跑修正了一下没用过的东西,改了一下" />
+    <option name="LAST_COMMIT_MESSAGE" value="确实能跑修正了一下没用过的东西,改了一下" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
