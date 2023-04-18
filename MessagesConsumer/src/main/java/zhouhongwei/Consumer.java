@@ -44,11 +44,12 @@ public class Consumer implements Runnable{
         TimerTask task = new TimerTask() {
             @Override
             public void run() {
-                System.out.println(gaussCalculator.mean());
-                System.out.println(gaussCalculator.variance());
+                //System.out.println(gaussCalculator.mean());
+                //System.out.println(gaussCalculator.variance());
                 Message message;
                 try {
-                    message = session.createObjectMessage(new drawerData(gaussCalculator.mean(), gaussCalculator.variance(), gaussCalculator.getMaximum(), gaussCalculator.getMinimum()));
+                    message = session.createObjectMessage(new DrawerData(gaussCalculator.mean(), gaussCalculator.variance(),
+                            gaussCalculator.getMaximum(), gaussCalculator.getMinimum(), gaussCalculator.getArrayDouble(),gaussCalculator.getCountOfFloat()));
                 } catch (JMSException e) {
                     throw new RuntimeException(e);
                 }

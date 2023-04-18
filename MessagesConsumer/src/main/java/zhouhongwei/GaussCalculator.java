@@ -7,11 +7,11 @@ import javax.jms.MessageListener;
 import javax.jms.TextMessage;
 
 public class GaussCalculator implements MessageListener {
-    double[] arrayDouble;
-    int countOfFloat;
-    int pointer;
-    double maximum;
-    double minimum;
+    private final double[] arrayDouble;
+    private final int countOfFloat;
+    private int pointer;
+    private double maximum;
+    private double minimum;
 
     public GaussCalculator(int CountOfFloat) {
         countOfFloat = CountOfFloat;
@@ -39,15 +39,16 @@ public class GaussCalculator implements MessageListener {
     public double variance() {
         return StatUtils.variance(arrayDouble);
     }
-
     public double getMaximum() {
         return maximum;
     }
-
     public double getMinimum() {
         return minimum;
     }
 
+    public int getCountOfFloat() {
+        return countOfFloat;
+    }
 
     @Override
     public void onMessage(Message message) {
@@ -59,4 +60,7 @@ public class GaussCalculator implements MessageListener {
         }
     }
 
+    public double[] getArrayDouble() {
+        return arrayDouble;
+    }
 }
