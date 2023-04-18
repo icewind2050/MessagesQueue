@@ -5,13 +5,15 @@ import org.apache.activemq.ActiveMQConnectionFactory;
 import javax.jms.*;
 import java.util.Timer;
 import java.util.TimerTask;
+import java.util.TreeMap;
 
 public class Consumer implements Runnable{
     private static Connection connection;
     private final MessageConsumer messageConsumer;
-    private final MessageProducer messageProducer;
+    private  MessageProducer messageProducer;
     private final Session session;
-    GaussCalculator gaussCalculator;
+    private Message message;
+    private GaussCalculator gaussCalculator;
     public Consumer(String userName, String password, String URL,int countOfNumber) {
         try {
             gaussCalculator = new GaussCalculator(countOfNumber);
@@ -21,8 +23,9 @@ public class Consumer implements Runnable{
             session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
             Destination destinationReceive = session.createQueue("queue_gauss");
             Destination destinationSent = session.createQueue("queue_drawer");
+            messageProducer=session.createProducer(destinationSent);
             messageConsumer = session.createConsumer(destinationReceive);
-            messageProducer = session.createProducer(destinationSent);
+            messageConsumer.setMessageListener(gaussCalculator);
         } catch (JMSException e) {
             throw new RuntimeException(e);
         }
@@ -36,17 +39,11 @@ public class Consumer implements Runnable{
 
     @Override
     public void run() {
-        try {
-            messageConsumer.setMessageListener(gaussCalculator);
-        } catch (JMSException e) {
-            throw new RuntimeException(e);
-        }
-        TimerTask task = new TimerTask() {
+/*        TimerTask task = new TimerTask() {
             @Override
             public void run() {
-                //System.out.println(gaussCalculator.mean());
-                //System.out.println(gaussCalculator.variance());
-                Message message;
+                System.out.println(gaussCalculator.mean());
+                System.out.println(gaussCalculator.variance());
                 try {
                     message = session.createObjectMessage(new DrawerData(gaussCalculator.mean(), gaussCalculator.variance(),
                             gaussCalculator.getMaximum(), gaussCalculator.getMinimum(), gaussCalculator.getArrayDouble(),gaussCalculator.getCountOfFloat()));
@@ -61,11 +58,26 @@ public class Consumer implements Runnable{
             }
         };
         Timer timer = new Timer();
-        timer.scheduleAtFixedRate(task,50,10*1000);
-        try {
-            close();
-        } catch (JMSException e) {
-            throw new RuntimeException(e);
+        timer.scheduleAtFixedRate(task,1,10*1000);*/
+        while (true) {
+            System.out.println(gaussCalculator.mean());
+            System.out.println(gaussCalculator.variance());
+            try {
+                message = session.createObjectMessage(new DrawerData(gaussCalculator.mean(), gaussCalculator.variance(),
+                        gaussCalculator.getMaximum(), gaussCalculator.getMinimum(), gaussCalculator.getArrayDouble(), gaussCalculator.getCountOfFloat()));
+            } catch (JMSException e) {
+                throw new RuntimeException(e);
+            }
+            try {
+                messageProducer.send(message);
+            } catch (JMSException e) {
+                throw new RuntimeException(e);
+            }
+            try {
+                Thread.sleep(100);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
         }
     }
 }

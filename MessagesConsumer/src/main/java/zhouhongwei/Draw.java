@@ -14,6 +14,7 @@ public class Draw implements Runnable{
     public Draw(String userName, String password, String URL) throws JMSException {
         ConnectionFactory connectionFactory = new ActiveMQConnectionFactory(userName,password,URL);
         connection = connectionFactory.createConnection();
+        connection.start();
         Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
         Destination destination = session.createQueue("queue_drawer");
         MessageConsumer messageConsumer = session.createConsumer(destination);
@@ -23,11 +24,6 @@ public class Draw implements Runnable{
 
     @Override
     public void run() {
-        try {
-            connection.start();
-        } catch (JMSException e) {
-            throw new RuntimeException(e);
-        }
         int index =0;
         double[][] xyInitData = setData(drawListener.getDrawerData(),index,drawListener.getDrawerData().getLength());
         final XYChart chart = QuickChart.getChart("line chart","x","y"," ",
