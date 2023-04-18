@@ -34,7 +34,7 @@ public class Producer implements Runnable{
             Random gauss = new Random();
             double average = 5.0;
             double sigma = 2.0;
-            while (count-- != 0) {
+            while (count-- >=0) {
                 Message message = session.createTextMessage(String.valueOf(sigma * gauss.nextGaussian() + average));
                 messageProducer.send(message);
             }
