@@ -30,19 +30,14 @@ public class Producer implements Runnable{
     }
 
     public void sentMessageToActiveMQ() throws JMSException {
-        try {
             int count = 50000;
             Random gauss = new Random();
             double average = 5.0;
             double sigma = 2.0;
             while (count-- != 0) {
-                Thread.sleep(1);
                 Message message = session.createTextMessage(String.valueOf(sigma * gauss.nextGaussian() + average));
                 messageProducer.send(message);
             }
-        } catch (JMSException | InterruptedException e) {
-            throw new RuntimeException(e);
-        }
     }
 
     @Override

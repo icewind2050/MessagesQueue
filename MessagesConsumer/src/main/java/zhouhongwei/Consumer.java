@@ -39,29 +39,10 @@ public class Consumer implements Runnable{
 
     @Override
     public void run() {
-/*        TimerTask task = new TimerTask() {
-            @Override
-            public void run() {
-                System.out.println(gaussCalculator.mean());
-                System.out.println(gaussCalculator.variance());
-                try {
-                    message = session.createObjectMessage(new DrawerData(gaussCalculator.mean(), gaussCalculator.variance(),
-                            gaussCalculator.getMaximum(), gaussCalculator.getMinimum(), gaussCalculator.getArrayDouble(),gaussCalculator.getCountOfFloat()));
-                } catch (JMSException e) {
-                    throw new RuntimeException(e);
-                }
-                try {
-                    messageProducer.send(message);
-                } catch (JMSException e) {
-                    throw new RuntimeException(e);
-                }
-            }
-        };
-        Timer timer = new Timer();
-        timer.scheduleAtFixedRate(task,1,10*1000);*/
-        while (true) {
-            System.out.println(gaussCalculator.mean());
-            System.out.println(gaussCalculator.variance());
+
+        do {
+            //System.out.println(gaussCalculator.mean());
+            //System.out.println(gaussCalculator.variance());
             try {
                 message = session.createObjectMessage(new DrawerData(gaussCalculator.mean(), gaussCalculator.variance(),
                         gaussCalculator.getMaximum(), gaussCalculator.getMinimum(), gaussCalculator.getArrayDouble(), gaussCalculator.getCountOfFloat()));
@@ -78,6 +59,6 @@ public class Consumer implements Runnable{
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
-        }
+        } while (true);
     }
 }

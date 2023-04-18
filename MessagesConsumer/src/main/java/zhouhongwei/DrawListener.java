@@ -8,11 +8,14 @@ import javax.jms.ObjectMessage;
 public class DrawListener implements MessageListener {
     private DrawerData drawerData;
 
+
+
     @Override
     public void onMessage(Message message) {
         ObjectMessage objectMessage = (ObjectMessage) message;
         try {
             drawerData = (DrawerData) objectMessage.getObject();
+            System.out.println(drawerData.getMeanValue());
         } catch (JMSException e) {
             throw new RuntimeException(e);
         }

@@ -4,11 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eadfa530-eb92-4568-bb0e-bd3f3e0c8bf2" name="Changes" comment="Drawer finish">
+    <list default="true" id="eadfa530-eb92-4568-bb0e-bd3f3e0c8bf2" name="Changes" comment="能跑,画不了图,好像类不信任问题">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MessagesConsumer/src/main/java/zhouhongwei/Consumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/MessagesConsumer/src/main/java/zhouhongwei/Consumer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MessagesConsumer/src/main/java/zhouhongwei/Draw.java" beforeDir="false" afterPath="$PROJECT_DIR$/MessagesConsumer/src/main/java/zhouhongwei/Draw.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MessagesConsumer/src/main/java/zhouhongwei/DrawListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/MessagesConsumer/src/main/java/zhouhongwei/DrawListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MessagesConsumer/src/main/java/zhouhongwei/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/MessagesConsumer/src/main/java/zhouhongwei/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MessagesProducer/src/main/java/zhouhongwei/Producer.java" beforeDir="false" afterPath="$PROJECT_DIR$/MessagesProducer/src/main/java/zhouhongwei/Producer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +54,20 @@
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;temurin-17&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.Main (1)">
+  <component name="RunManager" selected="Application.Draw">
+    <configuration name="Draw" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="zhouhongwei.Draw" />
+      <module name="MessagesConsumer" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="zhouhongwei.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="zhouhongwei.Main" />
       <module name="MessagesConsumer" />
@@ -94,6 +109,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Draw" />
         <item itemvalue="Application.Main (1)" />
         <item itemvalue="Application.Main" />
       </list>
@@ -150,7 +166,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681794293092</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="能跑,画不了图,好像类不信任问题">
+      <created>1681797303687</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1681797303687</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -182,7 +205,8 @@
     <MESSAGE value="Drawer run" />
     <MESSAGE value="Drawer run finish" />
     <MESSAGE value="Drawer finish" />
-    <option name="LAST_COMMIT_MESSAGE" value="Drawer finish" />
+    <MESSAGE value="能跑,画不了图,好像类不信任问题" />
+    <option name="LAST_COMMIT_MESSAGE" value="能跑,画不了图,好像类不信任问题" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
