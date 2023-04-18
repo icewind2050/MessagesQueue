@@ -8,18 +8,16 @@ import org.knowm.xchart.XYChart;
 import javax.jms.*;
 
 public class Draw implements Runnable {
-    private final DrawListener drawListener;
+    private DrawListener drawListener;
     final MessageConsumer messageConsumer;
 
     public Draw(String userName, String password, String URL) throws JMSException {
         drawListener = new DrawListener();
         ActiveMQConnectionFactory connectionFactory = new ActiveMQConnectionFactory(userName, password, URL);
         connectionFactory.setTrustAllPackages(true);
-        Session session;
-        try (Connection connection = connectionFactory.createConnection()) {
-            connection.start();
-            session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
-        }
+        Connection connection = connectionFactory.createConnection();
+        connection.start();
+        Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
         Destination destination = session.createQueue("queue_drawer");
         messageConsumer = session.createConsumer(destination);
     }
