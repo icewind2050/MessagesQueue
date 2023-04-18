@@ -4,8 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eadfa530-eb92-4568-bb0e-bd3f3e0c8bf2" name="Changes" comment="确实能跑">
+    <list default="true" id="eadfa530-eb92-4568-bb0e-bd3f3e0c8bf2" name="Changes" comment="确实能跑修正了一下没用过的东西">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MessagesConsumer/src/main/java/zhouhongwei/Consumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/MessagesConsumer/src/main/java/zhouhongwei/Calculator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MessagesConsumer/src/main/java/zhouhongwei/Draw.java" beforeDir="false" afterPath="$PROJECT_DIR$/MessagesConsumer/src/main/java/zhouhongwei/Draw.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MessagesConsumer/src/main/java/zhouhongwei/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MessagesProducer/src/main/java/zhouhongwei/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MessagesProducer/src/main/java/zhouhongwei/Producer.java" beforeDir="false" afterPath="$PROJECT_DIR$/MessagesProducer/src/main/java/zhouhongwei/Producer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,6 +55,19 @@
   }
 }</component>
   <component name="RunManager" selected="Application.Draw">
+    <configuration name="Calculator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="zhouhongwei.Calculator" />
+      <module name="MessagesConsumer" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="zhouhongwei.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Draw" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="zhouhongwei.Draw" />
       <module name="MessagesConsumer" />
@@ -102,11 +120,26 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Producer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="zhouhongwei.Producer" />
+      <module name="MessagesProducer" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="zhouhongwei.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Draw" />
-        <item itemvalue="Application.Main (1)" />
+        <item itemvalue="Application.Calculator" />
+        <item itemvalue="Application.Producer" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Main (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -189,7 +222,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681800002662</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="确实能跑修正了一下没用过的东西">
+      <created>1681800078791</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1681800078791</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -225,7 +265,8 @@
     <MESSAGE value="能跑,画图出问题,类不能返回去" />
     <MESSAGE value="能跑有图,后面加个其他标签就行" />
     <MESSAGE value="确实能跑" />
-    <option name="LAST_COMMIT_MESSAGE" value="确实能跑" />
+    <MESSAGE value="确实能跑修正了一下没用过的东西" />
+    <option name="LAST_COMMIT_MESSAGE" value="确实能跑修正了一下没用过的东西" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -5,12 +5,12 @@ import org.apache.activemq.ActiveMQConnectionFactory;
 import javax.jms.*;
 
 
-public class Consumer implements Runnable{
+public class Calculator implements Runnable{
     private static Connection connection;
     private final MessageProducer messageProducer;
     private final Session session;
     private final GaussCalculator gaussCalculator;
-    public Consumer(String userName, String password, String URL,int countOfNumber) {
+    public Calculator(String userName, String password, String URL, int countOfNumber) {
         try {
             gaussCalculator = new GaussCalculator(countOfNumber);
             ConnectionFactory connectionFactory = new ActiveMQConnectionFactory(userName, password, URL);
@@ -51,11 +51,11 @@ public class Consumer implements Runnable{
             } catch (JMSException e) {
                 throw new RuntimeException(e);
             }
-            try {
-                Thread.sleep(100);
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
-            }
+
         } while (true);
+    }
+    public static void main(String[] args) throws JMSException, InterruptedException {
+        Calculator calculator = new Calculator("admin","admin","tcp://127.0.0.1:61616",500);
+        calculator.run();
     }
 }

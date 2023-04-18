@@ -8,7 +8,7 @@ import org.knowm.xchart.XYChart;
 import javax.jms.*;
 
 public class Draw implements Runnable {
-    private DrawListener drawListener;
+    private final DrawListener drawListener;
     final MessageConsumer messageConsumer;
 
     public Draw(String userName, String password, String URL) throws JMSException {
@@ -36,14 +36,14 @@ public class Draw implements Runnable {
             throw new RuntimeException(e);
         }
         double[][] xyInitData = setData(drawListener.getDrawerData(), index, drawListener.getDrawerData().getLength());
-        final XYChart chart = QuickChart.getChart("line chart", "x", "y", " ",
+        final XYChart chart = QuickChart.getChart("line chart", "x", " ", " ",
                 xyInitData[0], xyInitData[1]);
         final SwingWrapper<XYChart> swingWrapper = new SwingWrapper<>(chart);
         swingWrapper.displayChart();
         while (index < Integer.MAX_VALUE) {
             index += drawListener.getDrawerData().getLength();
             try {
-                Thread.sleep(100);
+                Thread.sleep(1);
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
