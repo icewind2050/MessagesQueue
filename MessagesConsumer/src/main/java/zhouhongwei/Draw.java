@@ -35,8 +35,7 @@ public class Draw implements Runnable {
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
-        DrawerData drawerData = drawListener.getDrawerData();
-        double[][] xyInitData = setData(drawListener.data, index, drawListener.length);
+        double[][] xyInitData = setData(drawListener.getDrawerData(), index, drawListener.getDrawerData().getLength());
         final XYChart chart = QuickChart.getChart("line chart", "x", "y", " ",
                 xyInitData[0], xyInitData[1]);
         final SwingWrapper<XYChart> swingWrapper = new SwingWrapper<>(chart);
@@ -66,15 +65,7 @@ public class Draw implements Runnable {
         yData = drawerData.getRealValue();
         return new double[][]{xData, yData};
     }
-    private static double[][] setData(double[] data, int index, int length) {
-        double[] xData = new double[length];
-        double[] yData;
-        for (int i = 0; i < length; i++) {
-            xData[i] = (double) i + index;
-        }
-        yData = data;
-        return new double[][]{xData, yData};
-    }
+
 
     public static void main(String[] args) throws JMSException {
         Draw draw = new Draw("admin", "admin", "tcp://127.0.0.1:61616");

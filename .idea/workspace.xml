@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eadfa530-eb92-4568-bb0e-bd3f3e0c8bf2" name="Changes" comment="能跑,画图出问题,类不能返回去">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MessagesConsumer/src/main/java/zhouhongwei/Consumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/MessagesConsumer/src/main/java/zhouhongwei/Consumer.java" afterDir="false" />
+    <list default="true" id="eadfa530-eb92-4568-bb0e-bd3f3e0c8bf2" name="Changes" comment="确实能跑">
       <change beforePath="$PROJECT_DIR$/MessagesConsumer/src/main/java/zhouhongwei/Draw.java" beforeDir="false" afterPath="$PROJECT_DIR$/MessagesConsumer/src/main/java/zhouhongwei/Draw.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MessagesConsumer/src/main/java/zhouhongwei/DrawListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/MessagesConsumer/src/main/java/zhouhongwei/DrawListener.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -178,7 +175,21 @@
       <option name="project" value="LOCAL" />
       <updated>1681798715698</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="能跑有图,后面加个其他标签就行">
+      <created>1681799896203</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1681799896203</updated>
+    </task>
+    <task id="LOCAL-00010" summary="确实能跑">
+      <created>1681800002662</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1681800002662</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -212,7 +223,9 @@
     <MESSAGE value="Drawer finish" />
     <MESSAGE value="能跑,画不了图,好像类不信任问题" />
     <MESSAGE value="能跑,画图出问题,类不能返回去" />
-    <option name="LAST_COMMIT_MESSAGE" value="能跑,画图出问题,类不能返回去" />
+    <MESSAGE value="能跑有图,后面加个其他标签就行" />
+    <MESSAGE value="确实能跑" />
+    <option name="LAST_COMMIT_MESSAGE" value="确实能跑" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
