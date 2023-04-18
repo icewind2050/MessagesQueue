@@ -57,4 +57,8 @@ public class DrawerData implements Serializable {
     public double[] getRealValue() {
         return realValue;
     }
+
+    public int getLength() {
+        return length;
+    }
 }
